@@ -10,6 +10,8 @@ function createDiv(number) {
     div.style.width = `${squareSize}px`;
     div.style.height = `${squareSize}px`;
     div.addEventListener("mouseenter", () => {
+      if (div.classList.contains("active")) return;
+      div.style.backgroundColor = randomRgb();
       div.classList.add("active");
     });
     container.appendChild(div);
@@ -20,6 +22,14 @@ function createDiv(number) {
 function removeDiv() {
   const selectAll = document.querySelectorAll(".innerDiv");
   selectAll.forEach((item) => item.remove());
+}
+
+function randomRgb() {
+  let randomRed = Math.floor(Math.random() * 256);
+  let randomGreen = Math.floor(Math.random() * 256);
+  let randomBlue = Math.floor(Math.random() * 256);
+  let randomRgb = `rgb(${randomRed},${randomGreen},${randomBlue})`;
+  return randomRgb;
 }
 
 const button = document.querySelector("button");
