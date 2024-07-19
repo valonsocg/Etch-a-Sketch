@@ -2,7 +2,7 @@ const container = document.querySelector(".container");
 
 function createDiv(number) {
   const squaresPerSide = Math.sqrt(number);
-  const squareSize = Math.floor(960 / squaresPerSide);
+  const squareSize = 960 / squaresPerSide;
 
   while (number > 0) {
     const div = document.createElement("div");
